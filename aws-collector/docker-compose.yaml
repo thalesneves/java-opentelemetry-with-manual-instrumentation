@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  adot-collector:
+    image: amazon/aws-otel-collector:latest
+    ports:
+      - "4317:4317" # Porta para OTLP gRPC
+    environment:
+      - AWS_REGION=us-west-2 # Defina sua região AWS
+      - AWS_ACCESS_KEY_ID=your-access-key-id
+      - AWS_SECRET_ACCESS_KEY=your-secret-access-key
+      - AWS_SESSION_TOKEN=your-session-token # Se estiver usando credenciais temporárias
+      - LOG_LEVEL=debug
+    command: ["--config=/etc/otel/config.yaml"]
+    volumes:
+      - ./otel-config.yaml:/etc/otel/config.yaml

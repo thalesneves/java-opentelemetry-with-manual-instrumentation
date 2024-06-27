@@ -1,0 +1,52 @@
+[
+    {
+        "name": "/chamada-ao-redis",
+        "id": "795b90dc45951621",
+        "start_time": 1719524022.4728868,
+        "trace_id": "1-efce338b-8f1d8fe7dc94aebace51c35f",
+        "end_time": 1719524027.4742515,
+        "fault": false,
+        "error": false,
+        "throttle": false,
+        "aws": {
+            "xray": {
+                "sdk": "opentelemetry for java",
+                "sdk_version": "1.39.0",
+                "auto_instrumentation": false
+            }
+        },
+        "parent_id": "aaf91842826f2d10",
+        "type": "subsegment"
+    },
+    {
+        "name": "/create",
+        "id": "aaf91842826f2d10",
+        "start_time": 1719524022.471103,
+        "trace_id": "1-efce338b-8f1d8fe7dc94aebace51c35f",
+        "end_time": 1719524027.474301,
+        "fault": false,
+        "error": false,
+        "throttle": false,
+        "aws": {
+            "xray": {
+                "sdk": "opentelemetry for java",
+                "sdk_version": "1.39.0",
+                "auto_instrumentation": false
+            }
+        },
+        "metadata": {
+            "default": {
+                "HTTP_HOST": "localhost:8080",
+                "HTTP_METHOD": "POST",
+                "HTTP_SCHEME": "http",
+                "HTTP_STATUS_CODE": 200,
+                "HTTP_TARGET": "/resource",
+                "HTTP_URL": "http://example/resource",
+                "otel.resource.service.name": "dice-server",
+                "otel.resource.telemetry.sdk.language": "java",
+                "otel.resource.telemetry.sdk.name": "opentelemetry",
+                "otel.resource.telemetry.sdk.version": "1.39.0"
+            }
+        }
+    }
+]
