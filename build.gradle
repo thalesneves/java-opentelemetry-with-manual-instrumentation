@@ -19,7 +19,7 @@ repositories {
 
 dependencyManagement {
 	imports {
-		mavenBom 'io.opentelemetry:opentelemetry-bom:1.39.0'
+		mavenBom 'io.opentelemetry:opentelemetry-bom:1.40.0'
 	}
 }
 

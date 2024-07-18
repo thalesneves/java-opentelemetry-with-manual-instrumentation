@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.java.opentelemetry;
 
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.trace.Tracer;
