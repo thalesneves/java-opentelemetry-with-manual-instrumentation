@@ -6,6 +6,8 @@ receivers:
 exporters:
   awsxray:
     region: us-west-2
+  logging:
+    loglevel: debug
 
 service:
   pipelines:
