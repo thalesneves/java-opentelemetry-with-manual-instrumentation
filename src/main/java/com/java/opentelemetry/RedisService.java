@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.java.opentelemetry;
 
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.StatusCode;
@@ -6,22 +6,24 @@ import io.opentelemetry.api.trace.Tracer;
 import io.opentelemetry.context.Context;
 import io.opentelemetry.context.Scope;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.stereotype.Service;
 
 @Service
 public class RedisService {
 
-    @Autowired
-    private Tracer tracer;
+    private final Tracer tracer;
 
-    public void chamadaAoRedis(Span parentSpan) {
-        Span span = tracer.spanBuilder("/chamada-ao-redis")
-                .setParent(Context.current().with(parentSpan))
+    @Autowired
+    public RedisService(Tracer tracer) {
+        this.tracer = tracer;
+    }
+
+    public void callToRedis() {
+        Span span = tracer.spanBuilder("/call-redis")
+                .setParent(Context.current())
                 .startSpan();
 
-        try (Scope scope = span.makeCurrent()) {
+        try (Scope ignored = span.makeCurrent()) {
             Thread.sleep(5000);
             span.setStatus(StatusCode.OK);
         } catch (InterruptedException e) {
