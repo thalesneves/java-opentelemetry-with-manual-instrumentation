@@ -23,8 +23,8 @@ public class RedisService {
                 .setParent(Context.current())
                 .startSpan();
 
-        try (Scope ignored = span.makeCurrent()) {
-            Thread.sleep(5000);
+         try (Scope ignored = span.makeCurrent()) {
+            Thread.sleep(50);
             span.setStatus(StatusCode.OK);
         } catch (InterruptedException e) {
             span.recordException(e);

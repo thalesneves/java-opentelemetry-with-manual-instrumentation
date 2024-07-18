@@ -6,7 +6,7 @@ This is a sample that uses Spring Boot Framework, Opentelemetry with manual inst
 OTEL_LOGS_EXPORTER=otlp
 OTEL_METRIC_EXPORT_INTERVAL=15000
 OTEL_METRICS_EXPORTER=otlp
-OTEL_SERVICE_NAME=dice-server
+OTEL_SERVICE_NAME=java-opentelemetry-with-manual-instrumentation
 OTEL_TRACES_EXPORTER=otlp
 ```
 

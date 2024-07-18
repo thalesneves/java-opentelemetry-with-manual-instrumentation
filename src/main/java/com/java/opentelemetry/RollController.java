@@ -25,14 +25,10 @@ public class RollController {
     public String example() {
         Span span = tracer.spanBuilder("/create").startSpan();
         span.setAttribute("http.method", "POST");
-        span.setAttribute("http.scheme", "http");
         span.setAttribute("http.url", "http://example/resource");
-        span.setAttribute("http.host", "localhost:8080");
-        span.setAttribute("http.target", "/resource");
         span.setAttribute("http.status_code", 200);
 
         try (Scope ignored = span.makeCurrent()) {
-            span.addEvent("call Redis...");
             redisService.callToRedis();
             span.setStatus(StatusCode.OK);
         } catch (Exception e) {
